@@ -11,12 +11,12 @@ app.use(bodyParser.json());
 app.use(morgan('combined')); // Logging de las solicitudes HTTP
 
 // Configurar la URL de MongoDB y otras variables
-const mongoURL = process.env.MONGO_URL || 'mongodb://localhost:27017'; // Es variable de entorno (Revisar .env)
-const DATABASE_NAME = process.env.DATABASE_NAME || 'bd_api_node';
+const mongoURL = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}` || 'mongodb://localhost:27017';
+const DATABASE_NAME = process.env.DB_NAME || 'bd_api_node';
 const COLLECTION_RESERVAS = process.env.COLLECTION_RESERVAS || 'Reserva';
 const COLLECTION_ESPACIOS = process.env.COLLECTION_ESPACIOS || 'Espacio';
-const api_python = process.env.API_PYTHON || 'http://127.0.0.1:8000/cursos/'; // Es variable de entorno (Revisar .env)
-const PORT = process.env.PORT || 8013; // REvisar archivo .env
+const api_python = process.env.PYTHON_API_URL || 'http://127.0.0.1:8000/cursos/'; // Es variable de entorno (Revisar .env)
+const PORT = process.env.APP_PORT || 8013; // REvisar archivo .env
 
 let mongoClient; // Variable para almacenar la conexión de MongoDB
 
