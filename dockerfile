@@ -3,5 +3,5 @@ WORKDIR /trabajo_parcial/API-Node
 COPY package*.json ./
 RUN npm install --production
 COPY . .
-EXPOSE 8012
+EXPOSE 8013
 CMD ["npm", "start"]
